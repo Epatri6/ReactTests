@@ -1,5 +1,5 @@
 import React from 'react';
-import GameSprite from './GameSprite';
+import Sprit from './Sprit';
 import GameContext from './GameContext';
 
 export default class GameManager extends React.Component {
@@ -7,7 +7,7 @@ export default class GameManager extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            fps: 10,
+            fps: 30,
             time: 0
         }
     }
@@ -22,6 +22,10 @@ export default class GameManager extends React.Component {
 
     update = () => {
         const {fps, time} = this.state;
+        let a = ''
+        for(let i = 0; i < 10000; i++) {
+            a += 'a';
+        }
         this.setState({time: time + (1000 / fps / 1000)});
         this.tick();
     }
@@ -33,7 +37,43 @@ export default class GameManager extends React.Component {
         }
         return (
             <GameContext.Provider value={contextValue}>
-                <GameSprite />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
+                <Sprit />
             </GameContext.Provider>
         )
     }
