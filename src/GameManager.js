@@ -1,14 +1,22 @@
 import React from 'react';
-import Sprit from './Sprit';
+import GameGrid from './GameGrid';
 import GameContext from './GameContext';
 
 export default class GameManager extends React.Component {
 
     constructor(props) {
         super(props);
+        const gridSize = 7;
+        let grid = new Array(gridSize);
+        grid.fill(new Array(gridSize));
+        grid.forEach(elem => {
+            elem.fill(0);
+        })
         this.state = {
             fps: 30,
-            time: 0
+            time: 0,
+            gridSize: gridSize,
+            grid: grid
         }
     }
 
@@ -22,58 +30,20 @@ export default class GameManager extends React.Component {
 
     update = () => {
         const {fps, time} = this.state;
-        let a = ''
-        for(let i = 0; i < 10000; i++) {
-            a += 'a';
-        }
         this.setState({time: time + (1000 / fps / 1000)});
         this.tick();
     }
 
-    render = () => {
+    render() {
         const contextValue = {
             time: this.state.time,
-            fps: this.state.fps
+            fps: this.state.fps,
+            gridSize: this.state.gridSize,
+            grid: this.state.grid
         }
         return (
             <GameContext.Provider value={contextValue}>
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
-                <Sprit />
+                <GameGrid />
             </GameContext.Provider>
         )
     }
