@@ -1,6 +1,3 @@
-import ss0 from './tile000.png';
-import ss1 from './tile001.png';
-import ss2 from './tile002.png';
-import ss3 from './tile003.png';
+import {tile000, tile001, tile002, tile003} from './test'
 
-export const spritSprites = [ss0, ss1, ss2, ss3];
+export const spritSprites = [tile000, tile001, tile002, tile003];

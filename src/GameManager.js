@@ -7,8 +7,8 @@ export default class GameManager extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            fps: 30,
-            time: 0
+            fps: 60,
+            time: 0,
         }
     }
 
@@ -23,7 +23,7 @@ export default class GameManager extends React.Component {
     update = () => {
         const {fps, time} = this.state;
         let a = ''
-        for(let i = 0; i < 10000; i++) {
+        for(let i = 0; i < 100000; i++) {
             a += 'a';
         }
         this.setState({time: time + (1000 / fps / 1000)});
