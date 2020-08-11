@@ -1,5 +1,5 @@
 import React from 'react';
-import GameGrid from './GameGrid';
+import GameGrid from './GameGrid/GameGrid';
 import GameContext from './GameContext';
 
 export default class GameManager extends React.Component {

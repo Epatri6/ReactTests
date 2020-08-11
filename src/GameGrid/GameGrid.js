@@ -1,6 +1,7 @@
 import React from 'react';
-import GridSquare from './GridSquare';
-import GameContext from './GameContext';
+import GridSquare from '../GridSquare/GridSquare';
+import GameContext from '../GameContext';
+import './GameGrid.css';
 
 export default class GameGrid extends React.Component {
 
@@ -17,9 +18,9 @@ export default class GameGrid extends React.Component {
 
     render() {
         return (
-            <>
-            {this.renderGrid()}
-            </>
+            <div className='game-grid'>
+                {this.renderGrid()}
+            </div>
         );
     };
 }
