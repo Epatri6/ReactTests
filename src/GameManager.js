@@ -11,12 +11,25 @@ export default class GameManager extends React.Component {
         grid.fill(new Array(gridSize));
         grid.forEach(elem => {
             elem.fill(0);
+            elem.forEach((_, index) => {
+                elem[index] = this.generateSquare();
+            })
         })
+        console.log(grid);
         this.state = {
             fps: 30,
             time: 0,
             gridSize: gridSize,
             grid: grid
+        }
+    }
+
+    generateSquare = () => {
+        const validNames = ['AddFlow', 'SubtractFlow'];
+        const validDirections = ['Up', 'Right', 'Down', 'Left'];
+        return {
+            name: validNames[Math.floor(validNames.length * Math.random())],
+            direction: validDirections[Math.floor(validDirections.length * Math.random())]
         }
     }
 
