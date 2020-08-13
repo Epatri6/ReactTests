@@ -11,7 +11,8 @@ export default class GameGrid extends React.Component {
         const {grid} = this.context;
         return grid.map((row, outerIndex) => {
             return row.map((col, index) => {
-                return <GridSquare key={(outerIndex * grid.length) + index}/>
+                const location = (outerIndex * grid.length) + index
+                return <GridSquare key={location} location={location}/>
             })
         });
     }
