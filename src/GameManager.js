@@ -1,6 +1,7 @@
 import React from 'react';
 import GameGrid from './GameGrid/GameGrid';
 import GameContext from './GameContext';
+import Sprit from './Sprit';
 
 export default class GameManager extends React.Component {
 
@@ -14,9 +15,10 @@ export default class GameManager extends React.Component {
                 grid[i][k] = this.generateSquare();
             }
         }
+        const validDirections = ['Up', 'Right', 'Down', 'Left'];
         grid[3][3] = {
-            ...grid[3][3],
-            name: 'Start'
+            name: 'Start',
+            direction: validDirections[Math.floor(validDirections.length * Math.random())]
         }
         this.state = {
             fps: 30,
@@ -28,8 +30,8 @@ export default class GameManager extends React.Component {
 
     generateSquare = () => {
         const validNames = ['AddFlow', 'SubtractFlow', 'Empty'];
-        const validDirections = ['Up', 'Right', 'Down', 'Left'];
-        const name = validNames[Math.floor(validNames.length * Math.random())]
+        const validDirections = ['Up', 'Right', 'Down', 'Left', 'None', 'None', 'None', 'None'];
+        const name = validNames[Math.floor(validNames.length * Math.random())];
         return {
             name: name,
             direction: (name === 'Empty') ? '' : validDirections[Math.floor(validDirections.length * Math.random())]
@@ -60,6 +62,7 @@ export default class GameManager extends React.Component {
         return (
             <GameContext.Provider value={contextValue}>
                 <GameGrid />
+                <Sprit />
             </GameContext.Provider>
         )
     }

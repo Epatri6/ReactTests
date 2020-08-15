@@ -6,7 +6,7 @@ export default class Sprit extends React.Component {
 
     render() {
         return (
-            <GameSprite fps={60} sprites={spritSprites}/>
+            <GameSprite fps={10} sprites={spritSprites}/>
         )
     }
 
