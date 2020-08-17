@@ -1,3 +1,20 @@
+/**
+ * Generates a random game square object
+ */
+const generateSquare = () => {
+    const validNames = ['AddFlow', 'SubtractFlow', 'Empty'];
+    const validDirections = ['Up', 'Right', 'Down', 'Left', 'None', 'None', 'None', 'None'];
+    const name = validNames[Math.floor(validNames.length * Math.random())];
+    return {
+        name: name,
+        direction: (name === 'Empty') ? '' : validDirections[Math.floor(validDirections.length * Math.random())],
+        passed: false
+    }
+}
+
+/** 
+ * Renders a square based on its game square object
+ */
 const renderSquareState = (gameObj) => {
     let res = ''
     switch(gameObj.name) {
@@ -34,5 +51,6 @@ const renderSquareState = (gameObj) => {
 }
 
 export default {
-    renderSquareState
+    renderSquareState,
+    generateSquare
 }
