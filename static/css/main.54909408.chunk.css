@@ -1,0 +1,2 @@
+.square{position:relative}img{top:0;left:0}.square-state,img{position:absolute;width:100px;height:100px}.square-state{text-align:center;line-height:100px;white-space:pre-wrap}.game-grid{display:grid;grid-template-columns:repeat(7,100px);grid-template-rows:repeat(7,100px)}
+/*# sourceMappingURL=main.54909408.chunk.css.map */

@@ -53,7 +53,25 @@ export default class GameManager extends React.Component {
 
     constructor(props) {
         super(props);
-        this.initializeGrid();
+        const gridSize = 7;
+        let grid = new Array(gridSize);
+        for (let i = 0; i < gridSize; i++) {
+            grid[i] = new Array(gridSize);
+            for (let k = 0; k < gridSize; k++) {
+                grid[i][k] = GameUtils.generateSquare();
+            }
+        }
+        const validDirections = ['Up', 'Right', 'Down', 'Left'];
+        grid[3][3] = {
+            name: 'Start',
+            direction: validDirections[Math.floor(validDirections.length * Math.random())]
+        }
+        this.state = {
+            fps: 30,
+            time: 0,
+            gridSize: gridSize,
+            grid: grid
+        };
     }
 
     componentDidMount = () => {
